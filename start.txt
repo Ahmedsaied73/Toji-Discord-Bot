@@ -1,0 +1,34 @@
+| Tool         | What it does                                               |
+| ------------ | ---------------------------------------------------------- |
+| `Node.js`    | The runtime environment for running the bot                |
+| `npm`        | For installing and managing packages                       |
+| `Discord.js` | To connect with Discord API and handle messages            |
+| `dotenv`     | To load secrets like API keys and tokens from `.env` file  |
+| `OpenAI API` | The brains behind the bot – GPT-3.5 or GPT-4 for responses |
+
+--------------------
+
+| LangChain Tool                                        | Purpose                                                         |
+| ----------------------------------------------------- | --------------------------------------------------------------- |
+| `ChatOpenAI` (`langchain/chat_models/openai`)         | Sends messages to GPT through LangChain                         |
+| `ConversationChain` (`langchain/chains`)              | A wrapper to tie together memory, prompts, and chat model       |
+| `BufferMemory` (`langchain/memory`)                   | Stores chat history during the session (like short-term memory) |
+| `SystemMessage` / `HumanMessage` (`langchain/schema`) | Used to define the character and handle user input respectively |
+
+--------------------
+
+| Component           | Role                                                                       |
+| ------------------- | -------------------------------------------------------------------------- |
+| `System Prompt`     | A special message that tells GPT who it is (like "You are Gojo Satoru...") |
+| `BufferMemory`      | Keeps track of the chat history for better, context-aware replies          |
+| `ConversationChain` | Feeds both memory and system prompt into the AI for natural conversation   |
+
+--------------------
+
+| Feature                  | Tools you can use                                                      |
+| ------------------------ | ---------------------------------------------------------------------- |
+| **Persistent memory**    | Store memory in a DB (like MongoDB or Redis)                           |
+| **Multiple characters**  | Add a `!setcharacter` command to change system prompt dynamically      |
+| **Voice responses**      | Integrate with `ElevenLabs`, `Google TTS`, or `discord-tts`            |
+| **Knowledge base / RAG** | Use LangChain with vector DBs like `Pinecone`, `Weaviate`, or `Chroma` |
+
